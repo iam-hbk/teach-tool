@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { Fragment } from "react"
 
 import { competencyGroups } from "@/lib/competencies"
-import { competencySearchIndex } from "@/lib/competency-search"
+import { CompetencySearchDialog } from "@/components/layout/competency-search-dialog"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,9 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { IconSearch } from "@tabler/icons-react"
 
 function titleCase(value: string) {
   return value
@@ -84,14 +82,7 @@ export function CompetencyContentHeader() {
         </Breadcrumb>
       </div>
 
-      <Button variant="outline" size="sm" disabled className="hidden sm:flex">
-        <IconSearch data-icon="inline-start" />
-        Search competencies
-        <span className="text-xs text-muted-foreground">
-          ({competencySearchIndex.length})
-        </span>
-        <kbd className="ml-2 rounded border px-1.5 py-0.5 text-[10px]">/</kbd>
-      </Button>
+      <CompetencySearchDialog />
     </div>
   )
 }
