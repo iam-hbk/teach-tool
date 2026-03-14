@@ -1,4 +1,13 @@
 const CENTER = 300
+const PATH_PRECISION = 3
+
+function formatPathNumber(value: number) {
+  const factor = 10 ** PATH_PRECISION
+  const rounded = Math.round(value * factor) / factor
+  return Number.isInteger(rounded)
+    ? String(rounded)
+    : rounded.toFixed(PATH_PRECISION).replace(/\.?0+$/, "")
+}
 
 export function polarToCartesian(radius: number, angleInDegrees: number) {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180
@@ -21,7 +30,7 @@ export function createArcPath(
   const outerStart = polarToCartesian(outerRadius, startAngle)
   const outerEnd = polarToCartesian(outerRadius, endAngle)
 
-  return `M ${start.x},${start.y} A ${innerRadius},${innerRadius} 0 ${largeArcFlag},1 ${end.x},${end.y} L ${outerEnd.x},${outerEnd.y} A ${outerRadius},${outerRadius} 0 ${largeArcFlag},0 ${outerStart.x},${outerStart.y} Z`
+  return `M ${formatPathNumber(start.x)},${formatPathNumber(start.y)} A ${formatPathNumber(innerRadius)},${formatPathNumber(innerRadius)} 0 ${largeArcFlag},1 ${formatPathNumber(end.x)},${formatPathNumber(end.y)} L ${formatPathNumber(outerEnd.x)},${formatPathNumber(outerEnd.y)} A ${formatPathNumber(outerRadius)},${formatPathNumber(outerRadius)} 0 ${largeArcFlag},0 ${formatPathNumber(outerStart.x)},${formatPathNumber(outerStart.y)} Z`
 }
 
 export function createTextArcPath(
@@ -33,7 +42,7 @@ export function createTextArcPath(
   const start = polarToCartesian(radius, startAngle)
   const end = polarToCartesian(radius, endAngle)
 
-  return `M ${start.x},${start.y} A ${radius},${radius} 0 ${largeArcFlag},1 ${end.x},${end.y}`
+  return `M ${formatPathNumber(start.x)},${formatPathNumber(start.y)} A ${formatPathNumber(radius)},${formatPathNumber(radius)} 0 ${largeArcFlag},1 ${formatPathNumber(end.x)},${formatPathNumber(end.y)}`
 }
 
 export function getFontSize(textLength: number) {

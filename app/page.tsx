@@ -82,7 +82,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="/assets/teach_logo_light.svg"
+                src="/assets/teach_logo.svg"
                 alt="T-E-A-C-H logo"
                 width={420}
                 height={220}

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 
 import { competencyGroups } from "@/lib/competencies"
 import { ROUTES } from "@/lib/routes"
+import { ThemeToggleButton } from "@/components/layout/theme-toggle-button"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -98,54 +99,58 @@ export function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="xl:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon-sm">
-                <IconMenu2 />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[90vw] overflow-y-auto sm:max-w-sm"
-            >
-              <SheetHeader>
-                <SheetTitle>Navigation</SheetTitle>
-                <SheetDescription>
-                  Browse core pages and competency areas.
-                </SheetDescription>
-              </SheetHeader>
-              <div className="px-4 pb-6">
-                <nav className="flex flex-col gap-1">
-                  {primaryLinks.map((link) => (
-                    <Button
-                      key={link.label}
-                      asChild
-                      variant="ghost"
-                      className="justify-start"
-                    >
-                      <Link href={link.href}>{link.label}</Link>
-                    </Button>
-                  ))}
-                </nav>
-                <Separator className="my-4" />
-                <div className="flex flex-col gap-3">
-                  {competencyGroups.map((group) => (
-                    <div key={group.title} className="rounded-md border p-2">
-                      <Link
-                        href={group.link}
-                        className="text-sm font-semibold"
-                        style={{ color: group.color }}
+        <div className="flex items-center gap-2">
+          <ThemeToggleButton />
+
+          <div className="xl:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon-sm">
+                  <IconMenu2 />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-[90vw] overflow-y-auto sm:max-w-sm"
+              >
+                <SheetHeader>
+                  <SheetTitle>Navigation</SheetTitle>
+                  <SheetDescription>
+                    Browse core pages and competency areas.
+                  </SheetDescription>
+                </SheetHeader>
+                <div className="px-4 pb-6">
+                  <nav className="flex flex-col gap-1">
+                    {primaryLinks.map((link) => (
+                      <Button
+                        key={link.label}
+                        asChild
+                        variant="ghost"
+                        className="justify-start"
                       >
-                        {group.title}
-                      </Link>
-                    </div>
-                  ))}
+                        <Link href={link.href}>{link.label}</Link>
+                      </Button>
+                    ))}
+                  </nav>
+                  <Separator className="my-4" />
+                  <div className="flex flex-col gap-3">
+                    {competencyGroups.map((group) => (
+                      <div key={group.title} className="rounded-md border p-2">
+                        <Link
+                          href={group.link}
+                          className="text-sm font-semibold"
+                          style={{ color: group.color }}
+                        >
+                          {group.title}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

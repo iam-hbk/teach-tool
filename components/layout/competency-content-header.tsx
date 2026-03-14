@@ -6,6 +6,7 @@ import { Fragment } from "react"
 
 import { competencyGroups } from "@/lib/competencies"
 import { CompetencySearchDialog } from "@/components/layout/competency-search-dialog"
+import { ThemeToggleButton } from "@/components/layout/theme-toggle-button"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -82,7 +83,10 @@ export function CompetencyContentHeader() {
         </Breadcrumb>
       </div>
 
-      <CompetencySearchDialog />
+      <div className="flex items-center gap-2">
+        <ThemeToggleButton />
+        <CompetencySearchDialog />
+      </div>
     </div>
   )
 }

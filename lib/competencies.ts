@@ -137,7 +137,7 @@ export const competencyGroups: CompetencyGroup[] = [
   },
   {
     title: "Higher Education",
-    color: "#2C2A2B",
+    color: "var(--higher-education-color)",
     link: "/competencies/higher-education",
     subSegments: [
       {
