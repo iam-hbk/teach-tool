@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { NavigationWheel } from "@/components/competencies/navigation-wheel"
 import { PageShell } from "@/components/layout/page-shell"
 import { SectionBlock } from "@/components/layout/section-block"
 import { Button } from "@/components/ui/button"
@@ -108,6 +109,15 @@ export default function HomePage() {
             performance management, and promotion applications.
           </CardContent>
         </Card>
+      </SectionBlock>
+
+      <SectionBlock className="pt-0">
+        <div className="rounded-3xl border bg-card p-4 sm:p-6">
+          <h2 className="mb-4 text-center text-xl font-semibold sm:text-2xl">
+            Explore The Competency Wheel
+          </h2>
+          <NavigationWheel />
+        </div>
       </SectionBlock>
 
       <SectionBlock className="pt-0">
