@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { NavigationWheel } from "@/components/competencies/navigation-wheel"
@@ -47,21 +46,26 @@ export default function HomePage() {
   return (
     <PageShell>
       <SectionBlock className="pt-8 sm:pt-12">
-        <div className="relative overflow-hidden rounded-3xl bg-[radial-gradient(circle_at_20%_20%,hsl(var(--primary)/0.14),transparent_45%),radial-gradient(circle_at_85%_15%,hsl(var(--chart-2)/0.12),transparent_42%),linear-gradient(to_bottom_right,hsl(var(--background)),hsl(var(--muted)/0.35),hsl(var(--background)))] p-6 sm:p-8">
-          <div className="pointer-events-none absolute -top-20 -left-24 size-64 rounded-full bg-primary/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-16 -bottom-20 size-72 rounded-full bg-chart-2/10 blur-3xl" />
+        <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[linear-gradient(125deg,hsl(var(--background))_0%,hsl(var(--muted)/0.6)_45%,hsl(var(--background))_100%)] p-6 shadow-[0_32px_80px_-48px_hsl(var(--primary)/0.75)] sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,hsl(var(--primary)/0.2),transparent_40%),radial-gradient(circle_at_80%_15%,hsl(var(--chart-2)/0.22),transparent_38%),linear-gradient(to_top,hsl(var(--primary)/0.08),transparent_35%)]" />
+          <div className="pointer-events-none absolute top-8 right-8 h-28 w-28 rounded-full border border-primary/35" />
+          <div className="pointer-events-none absolute top-12 right-12 h-28 w-28 rounded-full border border-chart-2/35" />
 
-          <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="flex flex-col gap-4">
-              <p className="text-sm font-medium text-muted-foreground">
-                T-E-A-C-H Academic Competency Tool
+          <div className="relative grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="flex flex-col gap-5 pt-2 duration-700 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-left-4">
+              <p className="w-fit rounded-full border border-primary/25 bg-background/70 px-4 py-1 text-xs font-semibold tracking-[0.22em] text-primary uppercase backdrop-blur-sm">
+                TEACH Academic Compass
               </p>
-              <h1 className="text-3xl leading-tight font-semibold sm:text-4xl">
-                The model provides a quick scan of the critical competencies
-                required for an academic on all levels.
+              <h1 className="max-w-[18ch] text-3xl leading-[1.08] font-semibold text-balance sm:text-4xl lg:text-5xl">
+                Navigate your teaching growth with a living competency map.
               </h1>
-              <div className="inline-flex w-fit items-center rounded-full bg-background/70 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm">
-                For
+              <p className="max-w-[54ch] text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Designed for reflective academics, this model surfaces what to
+                strengthen next across teaching practice, assessment, expertise,
+                care, and higher education context.
+              </p>
+              <div className="inline-flex w-fit items-center bg-background/75 text-sm text-muted-foreground backdrop-blur-sm">
+                Built for
                 <TypingAnimation
                   as="span"
                   words={roles}
@@ -71,24 +75,46 @@ export default function HomePage() {
                   loop
                 />
               </div>
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 <Button asChild>
-                  <Link href="#how-it-works">How it works</Link>
+                  <Link href={ROUTES.competencies}>Start self-assessment</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href={ROUTES.competencies}>Explore competencies</Link>
+                  <Link href="#how-it-works">How it works</Link>
                 </Button>
               </div>
+              <div className="grid w-full max-w-xl grid-cols-3 gap-2 pt-2 text-center text-xs sm:text-sm">
+                <div className="rounded-xl border border-border/80 bg-background/75 px-3 py-3 backdrop-blur-sm">
+                  <p className="font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                    domains
+                  </p>
+                  <p className="pt-1 text-lg font-semibold">5</p>
+                </div>
+                <div className="rounded-xl border border-border/80 bg-background/75 px-3 py-3 backdrop-blur-sm">
+                  <p className="font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                    sub-areas
+                  </p>
+                  <p className="pt-1 text-lg font-semibold">25+</p>
+                </div>
+                <div className="rounded-xl border border-border/80 bg-background/75 px-3 py-3 backdrop-blur-sm">
+                  <p className="font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                    pathways
+                  </p>
+                  <p className="pt-1 text-lg font-semibold">adaptive</p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/assets/teach_logo.svg"
-                alt="T-E-A-C-H logo"
-                width={420}
-                height={220}
-                className="h-auto w-full max-w-md drop-shadow-sm"
-                priority
-              />
+
+            <div className="relative mx-auto w-full max-w-175 delay-200 duration-700 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-right-4">
+              <div className="absolute inset-0 -z-10 rounded-[2rem] bg-[conic-gradient(from_210deg_at_50%_50%,hsl(var(--chart-2)/0.2),hsl(var(--primary)/0.14),hsl(var(--chart-1)/0.2),hsl(var(--chart-2)/0.2))] blur-2xl" />
+              <div className="rounded-[2rem] p-3 sm:p-4">
+                <div className="mb-3 flex items-center justify-between px-2">
+                  <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] text-primary uppercase">
+                    click to explore
+                  </span>
+                </div>
+                <NavigationWheel />
+              </div>
             </div>
           </div>
         </div>
@@ -109,15 +135,6 @@ export default function HomePage() {
             performance management, and promotion applications.
           </CardContent>
         </Card>
-      </SectionBlock>
-
-      <SectionBlock className="pt-0">
-        <div className="rounded-3xl border bg-card p-4 sm:p-6">
-          <h2 className="mb-4 text-center text-xl font-semibold sm:text-2xl">
-            Explore The Competency Wheel
-          </h2>
-          <NavigationWheel />
-        </div>
       </SectionBlock>
 
       <SectionBlock className="pt-0">

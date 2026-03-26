@@ -6,7 +6,7 @@ import {
 export default function WorkRelatedExperienceAndPartnershipsPage() {
   return (
     <ArticlePage title="EXPERTISE COMPETENCIES">
-      <ArticleSection title="SUB -COMPETENCY: WORK-RELATED EXPERIENCE & PARTNERSHIPS">
+      <ArticleSection title="Work-related Experience & Partnerships">
         <h3 className="font-semibold text-foreground">INTRODUCTION</h3>
         <p className="font-medium text-foreground">
           The Importance of Work Experience in Bridging Theory and Practice

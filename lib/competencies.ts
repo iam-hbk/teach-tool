@@ -55,6 +55,28 @@ export const competencyGroups: CompetencyGroup[] = [
     ],
   },
   {
+    title: "Expertise",
+    color: "#4EAA55",
+    link: "/competencies/expertise",
+    subSegments: [
+      {
+        title: "Subject Matter Expertise",
+        link: "/competencies/expertise/subject-matter-expertise",
+        color: "#5EB566",
+      },
+      {
+        title: "Work Related Experience & Partnerships",
+        link: "/competencies/expertise/work-related-experience-and-partnerships",
+        color: "#6EC078",
+      },
+      {
+        title: "Research Knowledge & Skills",
+        link: "/competencies/expertise/research-knowledge-and-skills",
+        color: "#7ECB89",
+      },
+    ],
+  },
+  {
     title: "Assessments",
     color: "#D0411F",
     link: "/competencies/assessments",
@@ -78,28 +100,6 @@ export const competencyGroups: CompetencyGroup[] = [
         title: "Moderation",
         link: "/competencies/assessments/moderation",
         color: "#DF8C77",
-      },
-    ],
-  },
-  {
-    title: "Expertise",
-    color: "#4EAA55",
-    link: "/competencies/expertise",
-    subSegments: [
-      {
-        title: "Subject Matter Expertise",
-        link: "/competencies/expertise/subject-matter-expertise",
-        color: "#5EB566",
-      },
-      {
-        title: "Work Related Experience & Partnerships",
-        link: "/competencies/expertise/work-related-experience-and-partnerships",
-        color: "#6EC078",
-      },
-      {
-        title: "Research Knowledge & Skills",
-        link: "/competencies/expertise/research-knowledge-and-skills",
-        color: "#7ECB89",
       },
     ],
   },
