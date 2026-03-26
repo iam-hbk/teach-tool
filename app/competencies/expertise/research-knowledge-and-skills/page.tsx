@@ -8,7 +8,7 @@ import {
 export default function ResearchKnowledgeAndSkillsPage() {
   return (
     <ArticlePage title="EXPERTISE COMPETENCIES">
-      <ArticleSection title="SUB -COMPETENCY: Research Methodology Knowledge and Skills">
+      <ArticleSection title="Research Methodology Knowledge and Skills">
         <h3 className="font-semibold text-foreground">INTRODUCTION</h3>
         <p>
           A strong foundation in research methodology is a critical component of

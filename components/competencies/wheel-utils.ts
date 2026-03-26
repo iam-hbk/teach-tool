@@ -47,8 +47,8 @@ export function createTextArcPath(
 
 export function getFontSize(textLength: number) {
   const maxLength = 20
-  const minFontSize = 8
-  const maxFontSize = 12
+  const minFontSize = 10
+  const maxFontSize = 14
 
   if (textLength <= maxLength) {
     return maxFontSize
